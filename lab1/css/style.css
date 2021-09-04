@@ -1,0 +1,106 @@
+body { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "logo title sidebar"
+    "logo subtitle sidebar"
+    "date date sidebar"
+    "footer footer footer";
+  grid-template-rows: 60px 90px auto 50px 60px;  
+  grid-template-columns: 350px auto 190px;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+  }  
+header, footer, article, nav, div {
+  padding: 1.2em;
+}
+
+header, footer{
+  background-color: cadetblue;
+}
+
+.logo, .menu{
+  background-color: antiquewhite;
+}
+
+.date, .Article{
+  background-color: aquamarine;
+}
+
+
+.pageHeader {
+  grid-area: header;
+}
+.pageHeader .header__text{
+  max-width: 18em;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: -37px;
+  border: 1px solid rgb(0, 0, 0);
+  background: #ffffff;
+}
+
+.pageFooter {
+  grid-area: footer;
+}
+
+.footer__text{
+  max-width: 12em;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: -37px;
+  border: 1px solid rgb(0, 0, 0);
+  background: #ffffff;
+}
+
+.Article { 
+  grid-area: title;      
+}
+
+
+.Subarticle { 
+  grid-area: subtitle; 
+}
+
+
+.logo { 
+  grid-area:logo;
+} 
+img{
+  display: flex;
+  width: 300px;
+  height: auto;
+  float: left;
+  object-fit: contain;
+
+}
+
+
+.menu { 
+  grid-area:sidebar;
+} 
+.menu__list a {
+  text-align: center;
+  background-color: hsl(40, 38%, 55%); 
+  color: black; 
+  display: inline-block; 
+  padding: 12px; 
+  text-decoration: none; 
+}
+.menu__list a.menu__item_active {
+  background-color: #e2312b; 
+  color: white;
+}
+li{
+  list-style-type: none;
+  margin: 10px -25px;
+}
+
+
+
+.date { 
+  grid-area:date;
+  text-align: center;
+} 
