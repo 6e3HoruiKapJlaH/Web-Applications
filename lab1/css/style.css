@@ -53,6 +53,8 @@ header, footer, article, nav, div {
 .Article { 
   background-color: aquamarine;
   grid-area: title;      
+  text-align: center;   
+  font-size: 150%;
 }
 
 
