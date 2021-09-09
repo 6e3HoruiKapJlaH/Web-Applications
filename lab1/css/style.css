@@ -1,4 +1,6 @@
-body { 
+body {
+  overflow:hidden;
+  overflow-y: scroll;
   display: grid;
   grid-template-areas: 
     "header header header"
@@ -12,25 +14,14 @@ body {
   grid-column-gap: 10px;
   height: 100vh;
   margin: 0;
-  }  
+}  
 header, footer, article, nav, div {
   padding: 1.2em;
 }
 
-header, footer{
-  background-color: cadetblue;
-}
-
-.logo, .menu{
-  background-color: antiquewhite;
-}
-
-.date, .Article{
-  background-color: aquamarine;
-}
-
 
 .pageHeader {
+  background-color: cadetblue;
   grid-area: header;
 }
 .pageHeader .header__text{
@@ -43,10 +34,11 @@ header, footer{
   background: #ffffff;
 }
 
+
 .pageFooter {
+  background-color: cadetblue;
   grid-area: footer;
 }
-
 .footer__text{
   max-width: 14em;
   text-align: right;
@@ -57,7 +49,9 @@ header, footer{
   background: #ffffff;
 }
 
+
 .Article { 
+  background-color: aquamarine;
   grid-area: title;      
 }
 
@@ -68,6 +62,7 @@ header, footer{
 
 
 .logo { 
+  background-color: antiquewhite;
   grid-area:logo;
 } 
 img{
@@ -76,11 +71,11 @@ img{
   height: auto;
   float: left;
   object-fit: contain;
-
 }
 
 
 .menu { 
+  background-color: antiquewhite;
   grid-area:sidebar;
 } 
 .menu__list a {
@@ -101,8 +96,8 @@ li{
 }
 
 
-
 .date { 
+  background-color: aquamarine;
   grid-area:date;
   text-align: center;
 } 
