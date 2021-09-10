@@ -8,7 +8,7 @@ body {
     "logo subtitle sidebar"
     "date date sidebar"
     "footer footer footer";
-  grid-template-rows: 60px 90px auto 50px 60px;  
+  grid-template-rows: auto 90px auto auto auto;  
   grid-template-columns: 350px auto 190px;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
@@ -24,31 +24,39 @@ header, footer, article, nav, div {
   background-color: cadetblue;
   grid-area: header;
   /*margin-bottom: auto;*/
+  display: flex;
+     align-items: center;
+     justify-content: center;
 }
-.header{
-  background-color: cadetblue;
-  grid-area: header;
+.pageHeader__main-text{
+  max-width: 800px;
 }
-/*.pageFooter__main-text{
-  margin-top: 30px;
-}*/
+
 .header__text{
   max-width: 300px;
-  max-height: 5px;
+  /*max-height: 5px;*/
   text-align:center;
+  position: relative;
+  display: block;
+  margin-bottom: 5px;
+  line-height: 6px;
   margin-left: auto;
   margin-right: 0;
-  position: absolute;
-  bottom: 0;
-  line-height: 8px;
   border: 1px solid rgb(0, 0, 0);
   background: #ffffff;
 }
 
 
+
 .pageFooter {
   background-color: cadetblue;
   grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pageFooter__main-text{
+  max-width: 800px;
 }
 .footer__text{
   max-width: 14em;
@@ -56,7 +64,10 @@ header, footer, article, nav, div {
   text-align: right;
   margin-left: auto;
   margin-right: 0;
-  margin-top: -30px;
+  position: relative;
+  position: relative;
+  display: block;
+  bottom: 0;
   line-height: 6px;
   border: 1px solid rgb(0, 0, 0);
   background: #ffffff;
