@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="scripts/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант 6</title>
+</head>
+
+<script>
+
+function displayCookies() {
+  var strVal = getCookie("Number");             
+  alert(strVal); 
+}
+
+function getCookie(name)
+  {
+    var dc = document.cookie;  
+    var prefix = name +"=";  
+    var begin = dc.indexOf("; " + prefix);  
+    if (begin == -1) {  
+      begin = dc.indexOf(prefix);  
+      if (begin != 0)return null;  
+    } else {  
+      begin += 2;  
+    }  
+    var end = document.cookie.indexOf(";", begin);  
+    if (end == -1) {  
+    end = dc.length;  
+    }  
+    return unescape(dc.substring(begin + prefix.length, end));  
+  }
+  function setCookie() {  
+    var value = document.getElementById("num").value;
+               var exdate = new Date();  
+                exdate.setDate(exdate.getDate() + 1);  
+                document.cookie = "number" + "=" + value + ";path=/" + ((1 ==null) ? "" : ";expires=" + exdate.toGMTString());  
+                document.cookie = "number = Basil"
+                alert(document.cookie)
+              }  
+  displayCookies()
+  
+</script>
+
+<body>
+  <header class="pageHeader">
+    Header
+    <div class="header__text">
+      
+      This site is working and i have no idea why
+    
+  </div>
+  </header>
+
+  <article class="Article">This site was published 04.09.2021</article>
+
+  <nav class="menu">
+    <ul class ="menu__list">
+      <li><a href="index_home.html" class="menu__item menu__item_active">HOME</a></li>
+      <li><a href="./pages/index_about.html" class="menu__item">ABOUT US</a></li>
+      <li><a href="./pages/index_portfolio.html" class="menu__item">PORTFOLIO</a></li>
+      <li><a href="./pages/index_contact.html" class="menu__item">CONTACT</a></li>
+      <li><a href="./pages/index_location.html" class="menu__item">OUR LOCATION</a></li>
+    </ul>
+  </nav>
+
+  <div class="logo">
+    <img src="img/Home.png" alt="Home">
+
+  </div>
+
+  <div class="Subarticle">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti officiis saepe omnis delectus ad neque fugit excepturi quibusdam ullam minus alias corporis, dolor consequuntur minima id odio consequatur recusandae rerum!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti officiis saepe omnis delectus ad neque fugit excepturi quibusdam ullam minus alias corporis, dolor consequuntur minima id odio consequatur recusandae rerum!
+    </p>
+
+    <form name="InputNumber">
+      <input id="num" size=5 value="">
+
+      <input type="button" name="bt" value="Щелкни здесь!"
+          onClick="setCookie(); displayCookies();">
+           
+    </form>
+
+  </div>
+
+  <script>
+
+    let a=5
+    let b = 6
+    h = 2
+    let square=document.querySelectorAll('.Subarticle')[0]
+    square.innerHTML+=h*(a+b)/2
+  
+  </script>
+
+  <div class="date">
+    Home
+
+  </div>
+
+  <footer class="pageFooter">
+    Footer
+    <div class="footer__text">
+      Our site has an unique design
+    </div>
+  </footer>
+</body>
+  
+</html>
