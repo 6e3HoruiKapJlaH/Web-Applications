@@ -8,6 +8,7 @@
     <title>Вариант 6</title>
 </head>
 <script>
+   window.onload = function() {
 if(document.cookie !== "" && confirm("Cookies: " + document.cookie + ". Want to save cookies?"))
 {
     document.getElementById("getDividersForm").setAttribute("class", "hidden");
@@ -17,15 +18,15 @@ else
     document.cookie = "ARR=0;max-age=0";
 }
 
-
+};
 function getDividers(){
     inputValue = document.getElementById("inputNum").value
     var arr = []; // массив, куда будут идти наши делители//
-            if(num < 0)
-            {num = num * -1;}
-            for (let i = 1; i <= num; i++) {
+            if(inputValue < 0)
+            {inputValue = inputValue * -1;}
+            for (let i = 1; i <= inputValue; i++) {
               
-                if (num % i == 0) 
+                if (inputValue % i == 0) 
                 {
                     arr.push(i);
                     arr.push(i * -1);
