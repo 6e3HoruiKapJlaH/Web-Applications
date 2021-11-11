@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.first {
+color: green;
+}
+</style>
+</head>
+<body>
+<h1>Welcome To My Domain</h1>
+<p>Have a Nice day</p>
+<p id="demo">Please select and click the remove element in the script</p>
+<button onclick="sam()">Removal words</button>
+<script>
+function removeElement(eId) {
+var e = document. getElementById(eId);
+e. parentNode. removeChild(e);
+}
+function sam() {
+var m = document.getElementById("demo");
+m.remove();
+}
+</script>
+</body>
+</html>

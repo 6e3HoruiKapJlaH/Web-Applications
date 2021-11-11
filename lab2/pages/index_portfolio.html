@@ -7,7 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вариант 6</title>
 </head>
+<script>
+if(document.cookie !== "" && confirm("Cookies: " + document.cookie + ". Want to save cookies?"))
+{
+    document.getElementById("getDividersForm").setAttribute("class", "hidden");
+}
+else
+{
+    document.cookie = "ARR=0;max-age=0";
+}
 
+
+function getDividers(){
+    inputValue = document.getElementById("inputNum").value
+    var arr = []; // массив, куда будут идти наши делители//
+            if(num < 0)
+            {num = num * -1;}
+            for (let i = 1; i <= num; i++) {
+              
+                if (num % i == 0) 
+                {
+                    arr.push(i);
+                    arr.push(i * -1);
+                }
+            }
+alert(arr)
+document.cookie = "ARR=" + arr.toString()
+}
+
+</script>
 <body>
   <header class="pageHeader">
     Header
@@ -47,7 +75,11 @@
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti officiis saepe omnis delectus ad neque fugit excepturi quibusdam ullam minus alias corporis, dolor consequuntur minima id odio consequatur recusandae rerum!
     </p>
-
+<form onsubmit="return false;" id="getDividersForm">
+				<label>Enter number: </label><br>
+				<input type="text" id="inputNum"><br>
+				<button onclick="getDividers()" id="calculate">Find dividers of number</button>
+			</form>
   </div>
   
   <div class="date">

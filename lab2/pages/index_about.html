@@ -7,7 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вариант 6</title>
 </head>
-
+<script>
+   window.onload = function() {
+  var h = 3, a =5, b=10;
+  var res = h*(a+b)/2
+  document.getElementById("Subarticle").innerHTML += "The answer is: " + res;
+};
+</script>
 <body>
   <header class="pageHeader">
     Header
@@ -34,7 +40,7 @@
     <img src="../img/About us.png" alt="About">
   </div>
 
-  <div class="Subarticle">
+  <div class="Subarticle", id="Subarticle">
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti officiis saepe omnis delectus ad neque fugit excepturi quibusdam ullam minus alias corporis, dolor consequuntur minima id odio consequatur recusandae rerum!
     </p>

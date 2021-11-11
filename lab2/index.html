@@ -4,47 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="css/style.css" />
-    <script src="scripts/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вариант 6</title>
 </head>
 
 <script>
-
-function displayCookies() {
-  var strVal = getCookie("Number");             
-  alert(strVal); 
-}
-
-function getCookie(name)
-  {
-    var dc = document.cookie;  
-    var prefix = name +"=";  
-    var begin = dc.indexOf("; " + prefix);  
-    if (begin == -1) {  
-      begin = dc.indexOf(prefix);  
-      if (begin != 0)return null;  
-    } else {  
-      begin += 2;  
-    }  
-    var end = document.cookie.indexOf(";", begin);  
-    if (end == -1) {  
-    end = dc.length;  
-    }  
-    return unescape(dc.substring(begin + prefix.length, end));  
-  }
-  function setCookie() {  
-    var value = document.getElementById("num").value;
-               var exdate = new Date();  
-                exdate.setDate(exdate.getDate() + 1);  
-                document.cookie = "number" + "=" + value + ";path=/" + ((1 ==null) ? "" : ";expires=" + exdate.toGMTString());  
-                document.cookie = "number = Basil"
-                alert(document.cookie)
-              }  
-  displayCookies()
-  
+  window.onload = function() {
+   a = document.getElementById("Article").innerHTML;
+   b = document.getElementById("date").innerHTML;
+   b = [a, a = b][0];
+   document.getElementById("Article").innerHTML = a;
+   document.getElementById("date").innerHTML = b;
+};
 </script>
-
 <body>
   <header class="pageHeader">
     Header
@@ -55,7 +27,7 @@ function getCookie(name)
   </div>
   </header>
 
-  <article class="Article">This site was published 04.09.2021</article>
+  <article class="Article" id="Article">Home</article>
 
   <nav class="menu">
     <ul class ="menu__list">
@@ -79,29 +51,10 @@ function getCookie(name)
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti officiis saepe omnis delectus ad neque fugit excepturi quibusdam ullam minus alias corporis, dolor consequuntur minima id odio consequatur recusandae rerum!
     </p>
-
-    <form name="InputNumber">
-      <input id="num" size=5 value="">
-
-      <input type="button" name="bt" value="Щелкни здесь!"
-          onClick="setCookie(); displayCookies();">
-           
-    </form>
-
   </div>
-
-  <script>
-
-    let a=5
-    let b = 6
-    h = 2
-    let square=document.querySelectorAll('.Subarticle')[0]
-    square.innerHTML+=h*(a+b)/2
   
-  </script>
-
-  <div class="date">
-    Home
+  <div class="date" id="date">
+    This site was published 04.09.2021
 
   </div>
 

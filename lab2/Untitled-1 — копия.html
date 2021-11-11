@@ -1,0 +1,43 @@
+<html>
+<head>
+ <link rel="stylesheet" href="style/css.css">
+<meta charset="cp_1251">
+ 
+<title>Событие onclick</title>
+  <script>
+  function but() {
+    var reg = document.getElementById("reg").value;
+    
+    if (reg='0')
+    {
+        let mydiv = document.createElement('div');
+        mydiv.className = "reg";
+        mydiv.id = 'mydiv';
+        mydiv.innerHTML=
+        '<strong>Ура!</strong>Вы прочитали это важное сообщение\
+        <input type="button" value="-" onclick="removeRow(this)">';
+        document.getElementById('content').appendChild(mydiv);
+
+    }
+   }
+   
+   function removeRow(input) {
+    document.getElementById('content').removeChild(input.parentNode);
+}   
+
+  </script>
+ 
+</head>
+<div id="bg">
+<div id="container">
+ <div id="nav">Левая колонка</div>
+ <div id="aside">
+ <form action="">
+ <input type="hidden" id="reg" text="0">
+   <p><input type="button" value="Проверить" onclick="but()"></p>
+  </form>
+  </div>
+ <div id="content">Центральная колонка</div>
+</div>
+</div>
+</html>
