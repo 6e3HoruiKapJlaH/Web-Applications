@@ -9,8 +9,8 @@
 </head>
 <script>
    window.onload = function() {
-
-if(document.cookie !== "" && confirm("Cookies: " + document.cookie + ". Want to save cookies?"))
+    x = confirm( confirm("Cookies: " + document.cookie + ". Want to save cookies?"));
+if(document.cookie != "" && x ==true)
 {
     document.getElementById("getDividersForm").style.visibility = "hidden";
 }
