@@ -12,11 +12,11 @@
 
 if(document.cookie !== "" && confirm("Cookies: " + document.cookie + ". Want to save cookies?"))
 {
-    document.getElementById("getDividersForm").display = 'none';
+    document.getElementById("getDividersForm").style.visibility = "hidden";
 }
 else
 {
-    document.cookie = "ARR=0;max-age=0";
+    document.cookie = "";
 }
 
 };
