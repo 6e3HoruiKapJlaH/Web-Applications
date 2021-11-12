@@ -7,7 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вариант 6</title>
 </head>
+<script>
+     window.onload = function() {
+  if(localStorage.getItem("menu")!= ""){
+    document.getElementById("menu").innerHTML = localStorage.getItem("menu");
+    localStorage.setItem("menu", "");
+  }
+};
 
+  function but(){
+  if(document.getElementById('choice-upper').checked == true) {   
+    var text = document.getElementById("menu").innerHTML; 
+    var array=""; 
+      var res = "";
+      for(var i =0; i< text.length; i++) {
+      	   array += text[i];  
+           if(text[i] == " " || i == text.length-1){    
+              res += array[0].toUpperCase() + array.slice(1);
+              array="";
+           }
+        }
+        localStorage.setItem("menu", res);
+        document.getElementById("menu").innerHTML = res;
+} else {  
+}  
+  }
+</script>
 <body>
   <header class ="pageHeader">
     <div class="pageHeader__main-text">
@@ -27,19 +52,24 @@
 
 
   <article class="Article">Contact
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur temporibus earum porro, vitae laborum animi eum ea harum ducimus perferendis? Optio quibusdam voluptatem fugit alias aut itaque sequi adipisci blanditiis!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
   </article>
 
-  <nav class="menu">
+  <nav class="menu" id="menu">
     <ul class ="menu__list">
       <li><a href="../index.html" class="menu__item">HOME</a></li>
       <li><a href="index_about.html" class="menu__item">ABOUT US</a></li>
       <li><a href="index_portfolio.html" class="menu__item">PORTFOLIO</a></li>
-      <li><a href="index_contact.html" class="menu__item menu__item_active">CONTACT</a></li>
+      <li><a Href="index_contact.html" Class="menu__item menu__item_active">CONTACT</a></li>
       <li><a href="index_location.html" class="menu__item">OUR LOCATION</a></li>
     </ul>
     This site was published 04.09.2021 This site was published 04.09.2021 This site was published 04.09.2021 This site was published 04.09.2021 This site was published 04.09.2021 This site was published 04.09.2021 This site was published 04.09.2021 This site was published 04.09.2021
+    <form>
 
+      <input type="radio" name="choice" value="no" id="choice-upper" onclick="but()">
+      <label for="choice">No</label>
+
+  </form>
   </nav>
 
   <div class="logo">

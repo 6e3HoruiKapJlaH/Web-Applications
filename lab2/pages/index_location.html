@@ -7,7 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вариант 6</title>
 </head>
+<script>
+  window.onload = function() {
+  if(localStorage.getItem("images")!= null){
+    document.getElementById("menu").innerHTML = localStorage.getItem("images");
+  }
+};
+    function but() {
+    var reg = document.getElementById("reg").value;
+    
+    var banner = new Array('About_us.png','Contact.png','Home.png','Location.png','Portfolio.png');
+    var count = banner.length;
+    var random = Math.floor(Math.random()*count);
+    src='../img/'+banner[random];
+    /* document.write('<img src="../img/'+banner[random]+'" alt="случайное изображение" />'); */
 
+    if (reg='0')
+    {
+        let mydiv = document.createElement('div');
+        mydiv.className = "reg";
+        mydiv.id = 'mydiv';
+        mydiv.innerHTML=
+        '<img src=../img/'+banner[random]+' />\
+        <input type="button" value="-" onclick="removeRow(this)">';
+        document.getElementById('menu').appendChild(mydiv);
+        localStorage.setItem("images", document.getElementById("menu").innerHTML);
+    }
+   }
+   
+   function removeRow(input) {
+    document.getElementById('menu').removeChild(input.parentNode);
+    localStorage.setItem("images", document.getElementById("menu").innerHTML);
+
+}   
+</script>
 <body>
   <header class="pageHeader">
     Header
@@ -20,7 +53,7 @@
 
   <article class="Article">Our location</article>
 
-  <nav class="menu">
+  <nav class="menu" id= "menu">
     <ul class ="menu__list">
       <li><a href="../index.html" class="menu__item">HOME</a></li>
       <li><a href="index_about.html" class="menu__item">ABOUT US</a></li>
@@ -44,6 +77,11 @@
       allowfullscreen="" 
       loading="lazy">
     </iframe>  
+
+    <form action="">
+      <input type="hidden" id="reg" text="0">
+        <p><input type="button" value="х" onclick="but()"></p>
+       </form>
   </div>
   
   <div class="date">
