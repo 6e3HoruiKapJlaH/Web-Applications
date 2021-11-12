@@ -9,10 +9,7 @@
 </head>
 <script>
    window.onload = function() {
-    var cookies = document.cookie.split(";");
-for (var i = 0; i < cookies.length; i++)
-  eraseCookie(cookies[i].split("=")[0]);
-    
+
 if(document.cookie !== "" && confirm("Cookies: " + document.cookie + ". Want to save cookies?"))
 {
     document.getElementById("getDividersForm").setAttribute("class", "hidden");
